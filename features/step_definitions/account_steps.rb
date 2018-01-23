@@ -36,35 +36,23 @@ Given("that they are on their account page") do
 end
 
 Then("their personal info should be visible") do
-  # save_and_open_page
   expect(find_field('account_name').value).to eq 'Scott'
   expect(find_field('account_location').value).to eq 'E5 0LR'
 end
 
-Given("the user is on the account page just created") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("that the user clicks on edit details") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
 Given("they have edited the content") do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in "Your bio", with: "I have edited this content"
 end
 
 When("they submit the update account form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on "Update Account"
 end
 
-Then("the account page is updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("the account is updated") do
+  expect(Account.last.your_bio).to eq "I have edited this content"
 end
 
-Then("updated account is visible") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
 
-Then("they see a flash notice informing that their record is updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("they see a flash notice informing them that their record is updated") do
+  expect(page).to have_content("Your account information was successfully updated.")
 end
