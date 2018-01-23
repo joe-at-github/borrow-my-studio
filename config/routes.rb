@@ -6,7 +6,9 @@ devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
 
-resources :users
+resources :users do
+resource :account, only: [:show, :new, :create, :edit, :update]
+end
 
 
 root 'home#index'

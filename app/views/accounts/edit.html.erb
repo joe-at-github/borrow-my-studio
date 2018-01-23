@@ -1,0 +1,29 @@
+<article class='col-md-6 col-md-offset-3'>
+  <section class='edit-account-form'>
+
+    <h3> Account </h3>
+
+    <section class='row' style='margin-bottom: 20px;'>
+     <figure class='col-md-2'>
+        <figure class='account-show'>
+        <%= image_tag @account.avatar_img_url unless @account.avatar_img.blank? %> 
+        </figure>
+      </figure>
+    </section>
+
+
+    <section>
+      <%= simple_form_for([@user, @account]) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :location %>
+      <%= f.input :telephone %>
+      <%= f.input :your_bio %>
+      <%= f.file_field :avatar_img %>
+
+      <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </section>
+
+  </section>
+</article>

@@ -15,17 +15,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'pry'
 gem 'carrierwave', '~> 1.0'
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
 gem 'simple_form', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
-gem 'searchkick', '~> 2.4'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'bootstrap-social-rails'
+
 
 group :test do
   gem 'launchy'
