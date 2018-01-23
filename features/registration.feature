@@ -10,7 +10,7 @@ Feature: Registration
 
   Scenario: A user logs into their account
     Given that a user exists
-    And they are on the sign in page
+      And they are on the sign in page
     When they enter their login details
       And they log in
     Then they redirect to the home page
