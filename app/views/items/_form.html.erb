@@ -1,0 +1,20 @@
+
+<div id='item-form'>
+  <div class="ui form">
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :item_name %>
+      <%= f.input :daily_price %>
+      <%= f.input :weekly_price %>
+      <%= f.label :category, label: 'Category' %>
+      <%= f.select :category, [ 'Drum machines', 'Synths', 'Effects', 'Samplers', 'Guitars', ], :prompt => 'Select one' %>
+      <%= f.label :images, label: 'Images' %>
+      <%= f.file_field :images, multiple: true %> 
+      <%= f.label :description, label: 'Description' %>
+      <%= f.text_area :description %>
+
+      <%= f.button :submit, class: "ui primary button" %>
+    <% end %>
+  </div>
+</div>
+
+

@@ -23,6 +23,12 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'bootstrap-social-rails'
+gem 'therubyracer', platforms: :ruby # or any other runtime
+gem 'less-rails'
+gem 'autoprefixer-rails'
+gem 'semantic-ui-rails'
+gem 'semantic-ui-sass'
+
 
 
 group :test do

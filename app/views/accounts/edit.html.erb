@@ -1,14 +1,11 @@
-<article class='col-md-6 col-md-offset-3'>
   <section class='edit-account-form'>
 
     <h3> Account </h3>
 
-    <section class='row' style='margin-bottom: 20px;'>
-     <figure class='col-md-2'>
-        <figure class='account-show'>
-        <%= image_tag @account.avatar_img_url unless @account.avatar_img.blank? %> 
-        </figure>
-      </figure>
+    <section>
+        <div id='account-image'>
+          <%= image_tag @account.avatar_img_url unless @account.avatar_img.blank? %> 
+        </div>
     </section>
 
 
@@ -18,7 +15,8 @@
       <%= f.input :email %>
       <%= f.input :location %>
       <%= f.input :telephone %>
-      <%= f.input :your_bio %>
+      <%= f.label :your_bio, label: 'Your bio' %>
+      <%= f.text_area :your_bio %>
       <%= f.file_field :avatar_img %>
 
       <%= f.button :submit, class: "btn btn-primary" %>
@@ -26,4 +24,3 @@
     </section>
 
   </section>
-</article>

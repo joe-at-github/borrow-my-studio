@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_one :account
+  has_many :items
 
 
 end

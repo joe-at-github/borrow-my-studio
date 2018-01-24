@@ -10,6 +10,10 @@ resources :users do
 resource :account, only: [:show, :new, :create, :edit, :update]
 end
 
+resources :items do
+  
+end
+
 
 root 'home#index'
 end

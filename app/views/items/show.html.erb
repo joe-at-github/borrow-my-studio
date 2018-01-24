@@ -1,0 +1,18 @@
+
+    <span class='item-image'>
+      <%= image_tag @item.images[0].url unless @item.images.blank? %> 
+    </span>
+
+    <span class='item-image'>
+      <%= image_tag @item.images[1].url unless @item.images.blank? %> 
+    </span>
+
+
+    <div class='item-info'>
+      <h3> Item name: <%= @item.item_name %> </h3>
+      <p> Daily price: <%= @item.daily_price  %> </p>
+      <p> Weekly price: <%= @item.weekly_price  %> </p>
+      <p> Category: <%= @item.category %> </p>
+      <p> Description: <%= @item.description %> </p>
+    </div>
+  

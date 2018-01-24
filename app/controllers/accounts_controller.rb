@@ -17,7 +17,6 @@ class AccountsController < ApplicationController
   end
 
   def show
-    # @account = @user.account
     if @user.account.present? 
     redirect_to edit_user_account_path(@user)
     else 
