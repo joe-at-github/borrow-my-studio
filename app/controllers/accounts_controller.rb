@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
     @account = @user.build_account(account_params)
     if @account.save
       redirect_to root_path
-      flash[:notice] = "Your account information has been saved."
+      flash[:success] = "Your account information has been saved."
     else
       flash[:error] = "Error."
       render 'new'
@@ -31,7 +31,7 @@ class AccountsController < ApplicationController
   def update
     @account = @user.account
     if @account.update(account_params)
-    flash[:notice] = 'Your account information was successfully updated.'
+    flash[:success] = 'Your account information was successfully updated.'
     redirect_to root_path
     else
       render 'edit'

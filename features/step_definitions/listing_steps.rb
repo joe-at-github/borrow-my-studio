@@ -17,7 +17,7 @@ When("they fill out the details") do
 end
 
 When("they upload photos of the item") do
-  attach_file("item[images][]", Rails.root + "features/fixtures/p6.jpg")  
+  attach_file("item[images][]", Rails.root + "features/fixtures/p6.jpg" ) 
 end
 
 When("they click the create item button") do

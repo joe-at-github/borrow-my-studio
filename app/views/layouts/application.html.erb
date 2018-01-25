@@ -19,28 +19,32 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div class="ui secondary  menu">
-  <a>
-    <%= link_to 'Borrow-My-Studio', root_path, class: "item" %>
-  </a>
-  <a class="item">
-    Browse
-  </a>
-  <a>
-    <%= link_to 'List item', new_item_path, class: "item" %>
-  </a>
-  <div class="right menu">
-    <div class="item">
-      <div class="ui icon input">
-        <input type="text" placeholder="Search...">
-        <i class="search link icon"></i>
+      <div class="ui secondary  menu">
+        <a>
+          <%= link_to 'Borrow-My-Studio', root_path, class: "item" %>
+        </a>
+        <a class="item">
+          Browse
+        </a>
+        <a>
+          <%= link_to 'List item', new_item_path, class: "item" %>
+        </a>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+          <a>
+            <%= link_to 'Account', user_account_path(current_user), class: "ui item" %>
+          </a>
+          <a class="ui item">
+            Logout
+          </a>
+        </div>
+        
       </div>
-    </div>
-    <a class="ui item">
-      Logout
-    </a>
-  </div>
-</div>
 
     <%= yield %>
   

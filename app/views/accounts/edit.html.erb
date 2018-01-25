@@ -12,12 +12,12 @@
     <section>
       <%= simple_form_for([@user, @account]) do |f| %>
       <%= f.input :name %>
-      <%= f.input :email %>
       <%= f.input :location %>
       <%= f.input :telephone %>
+      <%= f.label :avatar_img, label: 'Your avatar' %>
+      <%= f.file_field :avatar_img %>
       <%= f.label :your_bio, label: 'Your bio' %>
       <%= f.text_area :your_bio %>
-      <%= f.file_field :avatar_img %>
 
       <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>

@@ -28,6 +28,7 @@ gem 'less-rails'
 gem 'autoprefixer-rails'
 gem 'semantic-ui-rails'
 gem 'semantic-ui-sass'
+gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
 
 
 

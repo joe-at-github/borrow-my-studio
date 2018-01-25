@@ -1,18 +1,38 @@
 
-    <span class='item-image'>
-      <%= image_tag @item.images[0].url unless @item.images.blank? %> 
-    </span>
+<div id="my-wrapper"> 
 
-    <span class='item-image'>
-      <%= image_tag @item.images[1].url unless @item.images.blank? %> 
-    </span>
-
-
-    <div class='item-info'>
-      <h3> Item name: <%= @item.item_name %> </h3>
-      <p> Daily price: <%= @item.daily_price  %> </p>
-      <p> Weekly price: <%= @item.weekly_price  %> </p>
-      <p> Category: <%= @item.category %> </p>
-      <p> Description: <%= @item.description %> </p>
+<div class="ui two column centered grid">
+  <div class="three column centered row">
+    <div class="column">
+      <div class='slider'>
+        <ul class="bxslider">
+          <li class='item-image'> <%= image_tag @item.images[0].url unless @item.images.blank? %></li>
+          <li class='item-image'> <%= image_tag @item.images[1].url unless @item.images.blank? %> </li>
+        </ul>
+      </div>
     </div>
+    <div class="center aligned column">
+      <h3> <%= @item.item_name %> </h3>
+      <h4> <i class="map icon big"></i> <%= @item.location %> </h4>
+      <h4> <i class="pound icon big"></i> <%= @item.daily_price %> a day </h4>
+      <h4> LENDER: <%= @item.owner %></h4>
+    </div>
+  </div>
+  <div class="left aligned column">
+    <h4> PRICE: </h4>
+    <span> £ <%= @item.daily_price  %> /day </span>
+    <span style='margin:3em'> £ <%= @item.weekly_price  %> /week </span>
+    <h4> DESCRIPTION: </h4>
+    <p> <%= @item.description %> </p>
+  </div>
+</div>
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
+</script>
   
