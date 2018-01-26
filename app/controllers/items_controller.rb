@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.create!(item_params)
     @item.user_id = current_user.id
     @item.location = current_user.account.location
@@ -35,6 +34,8 @@ class ItemsController < ApplicationController
       :weekly_price,
       :category,
       :user_id,
+      :location,
+      :owner,
       {images: []})
   end
 

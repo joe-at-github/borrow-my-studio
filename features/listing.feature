@@ -3,7 +3,13 @@ Feature: Listing
   Background:
     Given that a user exists
     Given that they are logged in
+    Given they visit their account page
+    When they fill out the account page with their details 
+      And they upload an avatar photo
+    Then they submit the account form
+      And their account is saved
     Given an item exists
+
 
   Scenario: A user lists an item
     Given they are on the home page

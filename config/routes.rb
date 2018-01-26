@@ -7,7 +7,8 @@ devise_for :users, controllers: {
       }
 
 resources :users do
-resource :account, only: [:show, :new, :create, :edit, :update]
+  resource :account, only: [:show, :new, :create, :edit, :update]
+
 end
 
 resources :items do

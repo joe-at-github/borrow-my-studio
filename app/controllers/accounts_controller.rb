@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
     @account = @user.build_account(account_params)
     if @account.save
       redirect_to root_path
-      flash[:success] = "Your account information has been saved."
+      flash[:notice] = "Your account information has been saved."
     else
       flash[:error] = "Error."
       render 'new'
@@ -17,10 +17,11 @@ class AccountsController < ApplicationController
   end
 
   def show
+    @account = @user.account
     if @user.account.present? 
-    redirect_to edit_user_account_path(@user)
+    redirect_to edit_user_account_path(current_user)
     else 
-    redirect_to new_user_account_path(@user)
+    redirect_to new_user_account_path(current_user)
     end
   end
 
@@ -31,7 +32,7 @@ class AccountsController < ApplicationController
   def update
     @account = @user.account
     if @account.update(account_params)
-    flash[:success] = 'Your account information was successfully updated.'
+    flash[:notice] = 'Your account information was successfully updated.'
     redirect_to root_path
     else
       render 'edit'

@@ -6,13 +6,13 @@ Given("that they are logged in") do
 end
 
 Given("they visit their account page") do
-  visit new_user_account_path(@user)
+  visit new_user_account_path(@user.id)
 end
 
 When("they fill out the account page with their details") do
   fill_in "Name", with: "Scott"
   fill_in "Location", with: "E5 0LR"
-  fill_in "Your bio", with: "Passionate musician willing to lease my gear to careful professionals"
+  fill_in "Telephone", with: "07494451935"
 end
 
 When("they upload an avatar photo") do
@@ -28,6 +28,7 @@ Then("their account is saved") do
 end
 
 Then("they see a notification") do
+  save_and_open_page
   expect(page).to have_content("Your account information has been saved.")
 end
 
@@ -41,7 +42,7 @@ Then("their personal info should be visible") do
 end
 
 Given("they have edited the content") do
-  fill_in "Your bio", with: "I have edited this content"
+  fill_in "Telephone", with: "0909090909090"
 end
 
 When("they submit the update account form") do
@@ -49,9 +50,8 @@ When("they submit the update account form") do
 end
 
 Then("the account is updated") do
-  expect(Account.last.your_bio).to eq "I have edited this content"
+  expect(Account.last.telephone).to eq "0909090909090"
 end
-
 
 Then("they see a flash notice informing them that their record is updated") do
   expect(page).to have_content("Your account information was successfully updated.")
