@@ -1,19 +1,14 @@
 class MessagesController < ApplicationController
-  before_action :set_conversation
+  before_action :authenticate_user!
+
+  def new
+    @chosen_recipient = User.find_by(id: params[:to].to_i) if params[:to]
+  end
 
   def create
-    receipt = current_user.reply_to_conversation(@conversation, params[:body])
-    redirect_to user_conversation_path(current_user, receipt.conversation)
+    recipients = User.where(id: params['recipients'])
+    conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
+    flash[:success] = "Message has been sent!"
+    redirect_to conversation_path(conversation)
   end
-
-
-
-
-  private
-
-  def set_conversation
-    @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
-  end
-
-
 end

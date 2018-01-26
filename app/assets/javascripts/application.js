@@ -17,4 +17,7 @@
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
 //= require rails-ujs
+//= require jquery.turbolinks
+//= require chosen-jquery
+//= require messages
 //= require_tree .
