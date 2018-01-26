@@ -28,7 +28,6 @@ Then("their account is saved") do
 end
 
 Then("they see a notification") do
-  save_and_open_page
   expect(page).to have_content("Your account information has been saved.")
 end
 

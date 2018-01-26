@@ -39,25 +39,25 @@ end
 
 
 Given("that they are on the item page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit item_path(@item)
 end
 
 When("they click on edit item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on "Edit Details"
 end
 
 When("they edit the listing") do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in "Daily price", with: 200.00
 end
 
 When("they click on update item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button "Update Item"
 end
 
 Then("the item will be updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(Item.last.daily_price).to eq 200.00
 end
 
 Then("they see a flash notice that confirms that they have edited the item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content("Item has been updated.")
 end

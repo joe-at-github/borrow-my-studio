@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @item.owner = current_user.account.name
     if @item.save
       redirect_to item_path(@item)
-      flash[:success] = 'Congratulations you have successfully listed an item.'
+      flash[:notice] = 'Congratulations you have successfully listed an item.'
     else
       render 'new'
       flash[:error] = 'Error.'
@@ -22,6 +22,20 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def edit
+  end
+
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item)
+      flash[:notice] = "Item has been updated."
+    else
+      render 'edit'
+    end
+  end
+
 
 
 
