@@ -1,0 +1,19 @@
+<h4> New Conversation </h4>
+
+<%= form_tag user_conversations_path(current_user, @conversations), method: :post do %>
+
+  <div>
+    <%= select_tag :user_id, options_from_collection_for_select(@recipients, :id, :name) %>
+  </div>
+
+  <div>
+    <%= text_field_tag :subject, nil, placeholder: "Subject" %>
+  </div>
+
+  <div>
+    <%= text_area_tag :body, nil, placeholder: "Leave a comment" %>
+  </div>  
+
+  <%= submit_tag %>
+
+<% end %>

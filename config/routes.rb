@@ -9,12 +9,14 @@ devise_for :users, controllers: {
 resources :users do
   resource :account, only: [:show, :new, :create, :edit, :update]
 
+
+resources :conversations do
+  resources :messages
 end
 
-resources :items do
-  
 end
 
+resources :items  
 
 root 'home#index'
 end

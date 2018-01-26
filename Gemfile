@@ -19,7 +19,6 @@ gem 'simple_form', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'bootstrap-social-rails'
@@ -29,6 +28,9 @@ gem 'autoprefixer-rails'
 gem 'semantic-ui-rails'
 gem 'semantic-ui-sass'
 gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
+gem 'mailboxer', '~> 0.15.1'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 
 

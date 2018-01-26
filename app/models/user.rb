@@ -7,6 +7,14 @@ class User < ApplicationRecord
   has_one :account
   has_many :items
 
+  acts_as_messageable
 
+  def name
+    "User #{id}"
+  end
+
+  def mailboxer_email(object)
+    nil
+  end
 
 end
