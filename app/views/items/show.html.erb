@@ -12,17 +12,19 @@
       </div>
     </div>
     <div class="center aligned column">
-      <h3> <i class="music icon big"></i> <%= @item.item_name %> </h3>
-      <h4> <i class="map icon big"></i> <%= @item.location %> </h4>
-      <h4> <i class="pound icon big"></i> <%= @item.daily_price %> a day </h4>
-      <h4> LENDER: <%= @item.owner %></h4>
+      <h5> <i class="music icon big"></i> <%= @item.item_name %> </h5>
+      <h5 style='display: inline'> <i class="map icon big"></i> <%= @item.location %> </h5>
+      <h5 style='display: inline'> <i class="pound icon big"></i> <%= @item.daily_price %> a day </h5>
+
+      <h5> LENDER: <%= @item.owner %></h5>
+      <h5 style='margin-top: 1em'><%= button_to 'Message lender', edit_item_path(@item), :method => :get, class: "ui primary button" %></h5>
     </div>
   </div>
   <div class="left aligned column">
-    <h4> PRICE: </h4>
+    <h5> PRICE: </h5>
     <span> £ <%= @item.daily_price  %> /day </span>
     <span style='margin:3em'> £ <%= @item.weekly_price  %> /week </span>
-    <h4> DESCRIPTION: </h4>
+    <h5> DESCRIPTION: </h5>
     <p> <%= @item.description %> </p>
   </div>
 </div>

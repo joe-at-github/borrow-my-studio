@@ -17,8 +17,9 @@
 
  @import "semantic-ui";
  @import "semantic-ui/collections/menu";
+ @import "semantic-ui/modules/tab";
  @import 'bootstrap';
- @import 'bootstrap/theme';
+// @import 'bootstrap/theme';
  @import 'chosen';
 
 
@@ -28,10 +29,15 @@ font-family: 'Lato';
 margin: 1em;
 }
 
+html {
+  font-size: 75%;
+}
+
 #item-form {
-  width: 50%;
+  width: 30%;
   margin-left: 1em;
 }
+
 
 #item_image {
   margin-bottom: 1em;
@@ -60,13 +66,14 @@ label {
   text-transform: none;
 }
 
+
 .edit-account-form {
-  width: 50%;
+  width: 55%;
   margin-left: 1em;
 }
 
 .new-account-form {
-  width: 50%;
+  width: 55%;
   margin-left: 1em;
 }
 
@@ -111,7 +118,7 @@ h3, h4 {
 
 #wrapper {
   text-align: center;
-  margin-top: 20em;
+  margin-top: 18em;
 }
 
 .alert-notice {
@@ -129,6 +136,21 @@ h3, h4 {
   margin-top: 1em;
 }
 
+.form-group {
+  width: 50%
+}
 
+#mailbox-buttons {
+  float: left;
+}
+
+#conversation-container {
+  width: 50%;
+}
+
+#nav {
+  margin-bottom: 3em;
+
+}
 
 

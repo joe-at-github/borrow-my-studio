@@ -1,15 +1,14 @@
   <section class='edit-account-form'>
 
-    <h3> Account </h3>
 
     <section>
         <div id='account-image'>
-          <%= image_tag @account.avatar_img_url unless @account.avatar_img.blank? %> 
+          <%= image_tag @account.avatar_img_url, :class => "ui medium circular image" %> 
         </div>
     </section>
 
 
-    <section>
+    <section class='edit-account-form'>
       <%= simple_form_for([@user, @account]) do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
@@ -24,3 +23,4 @@
     </section>
 
   </section>
+

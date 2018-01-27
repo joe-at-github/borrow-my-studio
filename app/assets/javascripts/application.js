@@ -11,13 +11,24 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bxslider
 //= require semantic-ui
 //= require semantic-ui/modal
 //= require semantic-ui/dropdown
 //= require rails-ujs
-//= require jquery.turbolinks
 //= require chosen-jquery
 //= require messages
 //= require_tree .
+
+
+<script>
+
+  $('.ui .item').on('click', function() {
+   $('.ui .item').removeClass('active');
+   $(this).addClass('active');
+}); 
+
+</script>
+
