@@ -2,13 +2,23 @@ Feature: Listing
 
   Background:
     Given that a user exists
+    Given they visit their account page
+    When they fill out the account page with their details 
+      And they upload an avatar photo
+    Then they submit the account form
+      And their account is saved 
     Given that they are logged in
+    Given they are on the home page
+    When they click list item
+      And they fill out the details
+      And they upload photos of the item
+      And they click the create item button
+    Then the item is saved to the database
     
   Scenario: A user can message the lender
-    Given that a user is logged in
-      And they are on an item page
+    Given that they are on the item page
     When they click message lender
-      And they fill out the message formm
+      And they fill out the message form
       And they click send
     Then the message will be sent to the lender
 

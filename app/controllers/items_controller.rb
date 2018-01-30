@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
       flash[:notice] = 'Congratulations you have successfully listed an item.'
     else
       render 'new'
-      flash[:error] = 'Error.'
+      flash[:alert] = 'Error.'
     end
   end
 

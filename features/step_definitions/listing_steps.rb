@@ -1,7 +1,3 @@
-Given("an item exists") do
-  @item = Item.create!(item_name: 'DJR400', daily_price: 150.00, weekly_price: 450.00, category: 'DJ mixers', description: 'Rare mixer for hire')
-end
-
 Given("they are on the home page") do
   visit root_path
 end
@@ -38,12 +34,8 @@ Then("they are taken to the item page") do
 end
 
 
-Given("that they are on the item page") do
-  visit item_path(@item)
-end
-
-When("they click on edit item") do
-  click_on "Edit Details"
+When("they click on edit listing") do
+  click_on "Edit Listing"
 end
 
 When("they edit the listing") do

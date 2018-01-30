@@ -14,7 +14,7 @@
     <%= label_tag 'recipients', 'Choose recipients' %>
     
     <% if params[:recipients] %>
-      <%= text_field_tag 'message[recipients]', params[:recipients], class: 'form-control', required: true %>
+      <%= select_tag 'recipients', recipient, class: 'form-control', required: true %>
     <% else %>
       <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
     <% end %>
@@ -22,3 +22,5 @@
 
   <%= submit_tag 'Send', class: "ui primary button" %>
 <% end %>
+
+

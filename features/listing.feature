@@ -8,8 +8,6 @@ Feature: Listing
       And they upload an avatar photo
     Then they submit the account form
       And their account is saved
-    Given an item exists
-
 
   Scenario: A user lists an item
     Given they are on the home page
@@ -20,10 +18,7 @@ Feature: Listing
     Then the item is saved to the database
       And they see a flash notice that confirms that they have listed an item
       And they are taken to the item page
-
-  Scenario: A user edits an item
-    Given that they are on the item page
-    When they click on edit item
+    When they click on edit listing
       And they edit the listing
       And they click on update item
     Then the item will be updated

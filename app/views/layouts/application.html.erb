@@ -11,14 +11,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
   </head>
 
   <body>
+
+<header>
+  <% if flash[:notice] %>
+    <div class="alert alert-info">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</header>
+
+
     <div id='nav'>
       <div class="ui secondary menu">
-        <a>
           <%= link_to 'Borrow-My-Studio', root_path, class: "item", style:'font-size: 14px' %>
-        </a>
         <div class="item">
           <div class="ui icon input", style:'font-size: 15px'>
             <a style='font-size: 14px'><input type="text" placeholder="Search..."></a>
@@ -30,30 +45,20 @@
         <div class="right menu">
           
 
-          <% if current_user %>
-          <a>
-          <%= link_to 'List item', new_item_path, class: "item", style:'font-size: 14px' %>
-        </a>
-          <a>
-            <%= link_to 'Your Conversations', conversations_path, class: "item", style:'font-size: 14px' %>
-          </a>
-          <a>
-            <%= link_to 'Account', user_account_path(current_user), class: "item", style:'font-size: 14px' %>
-          </a>
-          <a>
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "item", style:'font-size: 14px' %>
-          </a>
+          <% if user_signed_in? %>
+             
+              <%= link_to 'List item', new_item_path, class: "item", style:'font-size: 14px' %>
+              <%= link_to 'Your Conversations', conversations_path, class: "item", style:'font-size: 14px' %>
+              <%= link_to 'Account', user_account_path(current_user), class: "item", style:'font-size: 14px' %>
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "item", style:'font-size: 14px' %>
 
+            <% else %>
+
+              <%= link_to 'Sign up', new_user_registration_path, class: "item", style:'font-size: 14px' %> 
+              <%= link_to 'Sign in', new_user_session_path, class: "item", style:'font-size: 14px' %> 
+            
           <% end %>
           
-          <a>
-            <%= link_to 'Sign up', new_user_registration_path, class: "item", style:'font-size: 14px' %> 
-          </a>
-          <a>
-            <%= link_to 'Sign in', new_user_session_path, class: "item", style:'font-size: 14px' %> 
-          </a>
-          
-
         </div> 
       </div>
     </div>
