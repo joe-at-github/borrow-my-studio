@@ -1,38 +1,47 @@
 
 <div id="my-wrapper"> 
 
-<div class="ui two column centered grid">
-  <div class="three column centered row">
-    <div class="column">
-      <div class='slider'>
-        <ul class="bxslider">
-          <li class='item-image'> <%= image_tag @item.images[0].url unless @item.images.blank? %></li>
-          <li class='item-image'> <%= image_tag @item.images[1].url unless @item.images.blank? %> </li>
-        </ul>
+  <div class="ui two column centered grid">
+    <div class="three column centered row">
+      <div class="column">
+        <div class='slider'>
+          <ul class="bxslider">
+            <li class='item-image'> <%= image_tag @item.images[0].url unless @item.images.blank? %></li>
+            <li class='item-image'> <%= image_tag @item.images[1].url unless @item.images.blank? %> </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="center aligned column">
+        <h5> <i class="music icon big"></i> <%= @item.item_name %> </h5>
+        <h5 style='display: inline'> <i class="map icon big"></i> <%= @item.location %> </h5>
+        <h5 style='display: inline'> <i class="pound icon big"></i> <%= @item.daily_price %> a day </h5>
+        <h5> LENDER: <%= @item.user.username %></h5>
+        
+        <h5 style='margin-top: 1em'> <%= link_to 'Message lender', { :controller => "messages", :action => "new", :subject => @item.item_name, :recipients => @item.user.username }, class: "ui primary button" %>  
+        </h5>
+
       </div>
     </div>
-    <div class="center aligned column">
-      <h5> <i class="music icon big"></i> <%= @item.item_name %> </h5>
-      <h5 style='display: inline'> <i class="map icon big"></i> <%= @item.location %> </h5>
-      <h5 style='display: inline'> <i class="pound icon big"></i> <%= @item.daily_price %> a day </h5>
-
-      <h5> LENDER: <%= @item.owner %></h5>
-      <h5 style='margin-top: 1em'><%= button_to 'Message lender', edit_item_path(@item), :method => :get, class: "ui primary button" %></h5>
+  
+    <div class="left aligned column">
+      <h5> PRICE: </h5>
+      <span> £ <%= @item.daily_price  %> /day </span>
+      <span style='margin:3em'> £ <%= @item.weekly_price  %> /week </span>
+      <h5> DESCRIPTION: </h5>
+      <p> <%= @item.description %> </p>
     </div>
+  
   </div>
-  <div class="left aligned column">
-    <h5> PRICE: </h5>
-    <span> £ <%= @item.daily_price  %> /day </span>
-    <span style='margin:3em'> £ <%= @item.weekly_price  %> /week </span>
-    <h5> DESCRIPTION: </h5>
-    <p> <%= @item.description %> </p>
-  </div>
-</div>
+
 </div>
 
-    <nav>
+    <nav class='item-buttons'>
 
-        <%= button_to 'Edit Details', edit_item_path(@item), :method => :get, class: "ui primary button" %>
+      <% if current_user == @item.user %>
+        <%= button_to 'Edit Listing', edit_item_path(@item), :method => :get, class: "ui primary button" %>
+        <%= button_to 'Remove Listing', item_path(@item), :method => :delete, data: { confirm: "Are you sure?" }, class: "ui primary button", style:'margin-top:1em' %>
+      <% end %>
 
     </nav>
 

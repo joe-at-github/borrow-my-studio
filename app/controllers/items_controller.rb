@@ -6,10 +6,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create!(item_params)
+    @item = Item.create(item_params)
     @item.user_id = current_user.id
     @item.location = current_user.account.location
-    @item.owner = current_user.account.name
     if @item.save
       redirect_to item_path(@item)
       flash[:notice] = 'Congratulations you have successfully listed an item.'

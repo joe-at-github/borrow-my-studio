@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-  has_many :users
+  belongs_to :user
   mount_uploaders :images, ImageUploader
 end

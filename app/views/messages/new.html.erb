@@ -2,7 +2,7 @@
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
     <%= label_tag 'message[subject]', 'Subject' %>
-    <%= text_field_tag 'message[subject]', nil, class: 'form-control', required: true %>
+    <%= text_field_tag 'message[subject]', params[:subject], class: 'form-control', required: true %>
   </div>
 
   <div class="form-group">
@@ -12,7 +12,12 @@
 
   <div class="form-group">
     <%= label_tag 'recipients', 'Choose recipients' %>
-    <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: true, class: 'form-control chosen-it' %>
+    
+    <% if params[:recipients] %>
+      <%= text_field_tag 'message[recipients]', params[:recipients], class: 'form-control', required: true %>
+    <% else %>
+      <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
+    <% end %>
   </div>
 
   <%= submit_tag 'Send', class: "ui primary button" %>

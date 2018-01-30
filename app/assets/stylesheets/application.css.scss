@@ -68,12 +68,12 @@ label {
 
 
 .edit-account-form {
-  width: 55%;
+  width: 40%;
   margin-left: 1em;
 }
 
 .new-account-form {
-  width: 55%;
+  width: 40%;
   margin-left: 1em;
 }
 
@@ -114,6 +114,7 @@ label {
 
 h3, h4 {
   font-weight: normal;
+  margin-bottom: 2em;
 }
 
 #wrapper {
@@ -137,7 +138,7 @@ h3, h4 {
 }
 
 .form-group {
-  width: 50%
+  width: 40%
 }
 
 #mailbox-buttons {
@@ -150,7 +151,18 @@ h3, h4 {
 
 #nav {
   margin-bottom: 3em;
+}
 
+.form-inputs {
+  width: 40%;
+}
+
+.form-actions {
+  margin-top: 1em;
+}
+
+.item-buttons {
+  text-align: right;
 }
 
 
