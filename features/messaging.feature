@@ -1,6 +1,6 @@
-Feature: Listing
+Feature: Messaging
 
-  Background:
+  Background:  
     Given that a user exists
     Given they visit their account page
     When they fill out the account page with their details 
@@ -14,9 +14,16 @@ Feature: Listing
       And they upload photos of the item
       And they click the create item button
     Then the item is saved to the database
-    
+    Then the user signs out
+
+  
   Scenario: A user can message the lender
-    Given that they are on the item page
+    Given that another user exists
+      And they are on sign in page
+    When they enter login details
+      And they log in
+    Then they redirect to the home page
+    Given they visit the item page
     When they click message lender
       And they fill out the message form
       And they click send
