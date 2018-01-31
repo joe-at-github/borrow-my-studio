@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     @item.user_id = current_user.id
-    @item.location = current_user.account.location
     if @item.save
       redirect_to item_path(@item)
       flash[:notice] = 'Congratulations you have successfully listed an item.'

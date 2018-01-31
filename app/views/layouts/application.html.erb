@@ -11,24 +11,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <style>
+      #map-canvas {
+        width: 325px;
+        height: 285px;
+      }
+    </style>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyOcl4Nd71yjjYcQedbsham55FiRFd6R4&callback=initMap">
+    </script>
     
   </head>
 
   <body>
 
-<header>
-  <% if flash[:notice] %>
-    <div class="alert alert-info">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
 
-  <% if flash[:alert] %>
-    <div class="alert alert-danger">
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
-</header>
 
 
     <div id='nav'>
@@ -62,6 +61,20 @@
         </div> 
       </div>
     </div>
+
+    <header>
+      <% if flash[:notice] %>
+        <div class="ui mini green message">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <div class="ui mini red message">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </header>
 
 
     <%= yield %>
