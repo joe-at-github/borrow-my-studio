@@ -1,3 +1,4 @@
+
 <div id="my-wrapper"> 
 
   <div class="ui two column centered grid">
@@ -9,11 +10,7 @@
             <li class='item-image'> <%= image_tag @item.images[1] unless @item.images.blank? %></li>
           </ul>
 
-          <script>
-            $(document).ready(function(){
-            $('.bxslider').bxSlider();
-            });
-          </script> 
+ 
 
         </div>
       </div>
@@ -40,19 +37,19 @@
         <h5 style='margin-top: 2em' > DESCRIPTION: </h5>
         <p style='margin-bottom: 2.5em'> <%= @item.description %> </p>
       
-      <% if current_user == @item.user %>
-        <%= button_to 'Edit Listing', edit_item_path(@item), :method => :get, class: "ui primary button" %>
-        <%= button_to 'Remove Listing', item_path(@item), :method => :delete, data: { confirm: "Are you sure?" }, class: "ui primary button", style:'margin-top:1em' %>
-      <% end %>
-
+        <% if current_user == @item.user %>
+          <%= button_to 'Edit Listing', edit_item_path(@item), :method => :get, class: "ui primary button" %>
+          <%= button_to 'Remove Listing', item_path(@item), :method => :delete, data: { confirm: "Are you sure?" }, class: "ui primary button", style:'margin-top:1em' %>
+        <% end %>
       </div>
   
       <div id="map-canvas"></div>
 </div>
 
+
 <body onload="initMap()"></body>
- 
- <script>
+
+<script>
   var geocoder;
   var map;
   function initMap() {
@@ -66,22 +63,28 @@
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   }
 
-  function codeAddress() {
-    geocoder.geocode( { "address": '<%= @item.user.account.location %>' }, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
-  }
+    function codeAddress() {
+      geocoder.geocode( { "address": '<%= @item.user.account.location %>' }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
   window.onload = codeAddress;
 </script>
 
+<script>
+  $(document).ready(function(){
+  $('.bxslider').bxSlider();
+  });
+</script>
+ 
 
 
   

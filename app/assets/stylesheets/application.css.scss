@@ -22,8 +22,6 @@
 // @import 'bootstrap/theme';
  @import 'chosen';
 
-
-
 body {
 font-family: 'Lato';
 margin: 1em;
@@ -173,12 +171,22 @@ h3, h4 {
   margin-left: 19em;
   padding: 4em;
 }
+
 #map-canvas {
   width: 300px;
   float: left;
   height: 300px;
   margin-left: 9.5em;
 }
+
+// .thumbnail {
+//   width: 250px;
+//   height: 200px;
+//   display: inline-block; /* makes it fit in like an <img> */
+//   background-size: cover; /* or contain */
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
 
 
 

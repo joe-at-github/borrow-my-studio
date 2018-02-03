@@ -24,7 +24,12 @@ resources :conversations, only: [:index, :show, :destroy] do
 
 resources :messages, only: [:new, :create]
 
-resources :items  
+resources :items do
+  collection do
+    get 'search'
+  end
+end
+
 
 root 'home#index'
 end
