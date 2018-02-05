@@ -40,7 +40,6 @@
         
         <div class="right menu">
           
-
           <% if user_signed_in? %>
              
               <%= link_to 'List item', new_item_path, class: "item", style:'font-size: 14px' %>
@@ -59,6 +58,8 @@
       </div>
     </div>
 
+    <main>
+
     <header>
       <% if flash[:notice] %>
         <div class="ui mini green message">
@@ -73,8 +74,11 @@
       <% end %>
     </header>
 
+    
 
-    <%= yield %>
+      <%= yield %>
+
+    </main>
   
   </body>
 </html>

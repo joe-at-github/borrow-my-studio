@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy] 
 
   def search
+    @categories = Item.all
     if params[:search].present?
       @items = Item.search params[:search], fields: [:item_name, :category], match: :word_start
     else

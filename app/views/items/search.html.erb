@@ -1,14 +1,18 @@
+
+
+
+
 <div class='row'>
 
   <% @items.each do |item| %>
-    <figure class='col-md-4'>
-      <div class="ui medium bordered images">
-        <div class=thumbnail><%= link_to(image_tag(item.images[0].thumb), item_path(:id => item.id)) %></div>
+    <div class='col-md-3'>
+      <div class='thumbnail'>
+        <%= link_to(image_tag(item.images[0], class: "object-fit-cover"), item_path(:id => item.id)) %>
+        <span class='hover-text'> £<%= item.daily_price %>/day </span>
       </div>
-
-      <h6> <%= item.item_name %> </h6> 
-      <h6> <%= item.category %> </h6>
-    </figure>
+      <h6> <strong> <%= item.item_name %> </strong> </h6> 
+      <h6> from: <%= item.user.username %> ( <%= item.user.account.location %> )</h6>
+    </div>
 
   <% end %>
 
