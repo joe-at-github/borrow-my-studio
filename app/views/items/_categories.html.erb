@@ -1,0 +1,10 @@
+<div class='category-container'>
+  <div class="ui small vertical menu">
+    <a class="teal active item">
+      Categories:
+    </a> 
+      <% Category.all.order('name').each do |cat| %>
+        <%= link_to cat.name, items_path(category: cat.name), class: "teal item" %> 
+      <% end %>   
+  </div>
+</div>

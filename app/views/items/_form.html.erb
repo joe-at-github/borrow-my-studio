@@ -5,8 +5,8 @@
       <%= f.input :item_name %>
       <%= f.input :daily_price %>
       <%= f.input :weekly_price %>
-      <%= f.label :category, label: 'Category' %>
-      <%= f.select :category, [ 'Drum machines', 'Synths', 'Effects', 'Samplers', 'Guitars', ], :prompt => 'Select one' %>
+      <%= f.label :category_id, label: 'Category' %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select one' %>
       <%= f.label :images, label: 'Images' %>
       <%= f.file_field :images, multiple: true %> 
       <%= f.label :description, label: 'Description' %>

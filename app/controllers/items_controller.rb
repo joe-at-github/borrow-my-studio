@@ -2,13 +2,20 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy] 
 
   def search
-    @categories = Item.all
     if params[:search].present?
-      @items = Item.search params[:search], fields: [:item_name, :category], match: :word_start
-    else
-      @items = Item.all
+      @items = Item.search params[:search], fields: [:item_name], match: :word_start 
     end
   end
+
+  def index
+    if params[:category].present?
+      @category_id = Category.find_by(name: params[:category]).id
+      @items = Item.where(:category_id => @category_id).order("created_at DESC").paginate(page: params[:page], per_page: 12)
+    else
+      @items = Item.all.order("created_at DESC").paginate(page: params[:page], per_page: 12)
+    end
+  end
+
 
   def new
     @item = Item.new
@@ -27,7 +34,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    # @locations = Account.select(:location).map(&:location)
+    @listings = Item.where(:user_id => @item.user_id).order("created_at DESC")
   end
 
   def edit
@@ -53,7 +61,7 @@ class ItemsController < ApplicationController
       :description,
       :daily_price,
       :weekly_price,
-      :category,
+      :category_id,
       :user_id,
       :location,
       :owner,

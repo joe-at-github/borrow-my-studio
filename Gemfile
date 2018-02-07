@@ -30,7 +30,7 @@ gem 'semantic-ui-sass'
 gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
 gem 'mailboxer', '~> 0.15.1'
 gem 'bootstrap-will_paginate'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.1'
 gem 'gravatar_image_tag'
 gem 'chosen-rails', '~> 1.8', '>= 1.8.2'
 gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
@@ -38,6 +38,7 @@ gem 'jquery-turbolinks', '~> 2.1'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'searchkick', '~> 2.4'
+gem 'will_paginate_semantic_ui', '~> 1.0'
 
 
 

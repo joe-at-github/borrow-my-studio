@@ -1,7 +1,8 @@
 class Item < ApplicationRecord
-  searchkick word_start: [:item_name, :category]
+  searchkick word_start: [:item_name]
   
   belongs_to :user
+  belongs_to :category
   mount_uploaders :images, ImageUploader
 
 #   def validate_minimum_image_size

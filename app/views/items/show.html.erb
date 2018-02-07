@@ -9,9 +9,6 @@
             <li class='item-image'> <%= image_tag @item.images[0] unless @item.images.blank? %></li>
             <li class='item-image'> <%= image_tag @item.images[1] unless @item.images.blank? %></li>
           </ul>
-
- 
-
         </div>
       </div>
 
@@ -46,8 +43,25 @@
       <div id="map-canvas"></div>
 </div>
 
-
 <body onload="initMap()"></body>
+
+
+<div class='other-listings-wrapper'>
+  <h5 style='margin-bottom: 2em;'>OTHER LISTINGS FROM LENDER:</h5>
+    <div class='row'>
+      <% @listings.each do |listing| %>
+        <div class='col-md-3'>
+          <div class='thumbnail'>
+            <%= link_to(image_tag(listing.images[0], class: "object-fit-cover"), item_path(:id => listing.id)) %>
+            <span class='hover-text'> £<%= listing.daily_price %>/day </span>
+          </div>
+          <h6> <strong> <%= listing.item_name %> </strong> </h6> 
+          <h6> from: <%= listing.user.username %> ( <%= listing.user.account.location %> )</h6>
+        </div>
+      <% end %>
+    </div>
+</div>
+
 
 <script>
   var geocoder;
@@ -62,20 +76,26 @@
     }
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   }
+</script>
 
-    function codeAddress() {
-      geocoder.geocode( { "address": '<%= @item.user.account.location %>' }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          map.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location
-          });
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyOcl4Nd71yjjYcQedbsham55FiRFd6R4&callback=initMap">
+    </script>
+
+<script>
+  function codeAddress() {
+    geocoder.geocode( { "address": '<%= @item.user.account.location %>' }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
   window.onload = codeAddress;
 </script>
 

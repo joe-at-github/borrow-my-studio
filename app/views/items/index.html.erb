@@ -1,7 +1,6 @@
 
 <%= render 'categories' %>
 
-
 <div class='search-container'>
   <div class='row'>
     <% @items.each do |item| %>
@@ -15,8 +14,8 @@
       </div>
     <% end %>
   </div>
+      
+  <%= will_paginate @items %>
+
+
 </div>
-
-
-
-
