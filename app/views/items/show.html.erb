@@ -7,13 +7,12 @@
         <div class='slider'>
           <ul class="bxslider">
             <li class='item-image'> <%= image_tag @item.images[0] unless @item.images.blank? %></li>
-            <li class='item-image'> <%= image_tag @item.images[1] unless @item.images.blank? %></li>
           </ul>
         </div>
       </div>
 
       <div class="center aligned column">
-        <h5> <i class="music icon big"></i> <%= @item.item_name %> </h5>
+        <h5> <i class="info circle icon big"></i> <%= @item.item_name %> </h5>
         <h5 style='display: inline'> <i class="map icon big"></i> <span> <%= @item.user.account.location %> </span> </h5>
         <h5 style='display: inline'> <i class="pound icon big"></i> £ <%= @item.daily_price %>/day </h5>
         <h5> LENDER: <%= @item.user.username %></h5>

@@ -10,14 +10,15 @@ Feature: Listing
       And their account is saved
 
   Scenario: A user lists an item
+    Given there are some categories
     Given they are on the home page
     When they click list item
       And they fill out the details
       And they upload photos of the item
       And they click the create item button
-    Then the item is saved to the database
-      And they see a flash notice that confirms that they have listed an item
       And they are taken to the item page
+      And they see a flash notice that confirms that they have listed an item
+    Then the item is saved to the database     
     When they click on edit listing
       And they edit the listing
       And they click on update item

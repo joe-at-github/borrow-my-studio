@@ -1,15 +1,20 @@
+Given("there are some categories") do
+  Category.create!(name: "Synths")
+end
+
 Given("they are on the home page") do
   visit root_path
 end
 
 When("they click list item") do
-  click_on "List item"
+  click_on "List Item"
 end
 
 When("they fill out the details") do
   fill_in "Item name", with: "Prophet 6"
   fill_in "Daily price", with: 100.00
-  select "Synths", :from => "item_category"
+  fill_in "Weekly price", with: 500.00
+  select "Synths", :from => "item_category_id"
 end
 
 When("they upload photos of the item") do
@@ -20,17 +25,17 @@ When("they click the create item button") do
   click_button "Create Item"
 end
 
-Then("the item is saved to the database") do
-  expect(Item.last.item_name).to eq 'Prophet 6'
-  expect(Item.last.category).to eq 'Synths'
+Then("they are taken to the item page") do
+  expect(page).to have_content("Prophet 6")
 end
 
 Then("they see a flash notice that confirms that they have listed an item") do
   expect(page).to have_content("Congratulations you have successfully listed an item.")
 end
 
-Then("they are taken to the item page") do
-  expect(page).to have_content("Prophet 6")
+Then("the item is saved to the database") do
+  expect(Item.last.item_name).to eq 'Prophet 6'
+  expect(Item.last.daily_price).to eq 100.00
 end
 
 

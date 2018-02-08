@@ -34,8 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # @locations = Account.select(:location).map(&:location)
-    @listings = Item.where(:user_id => @item.user_id).order("created_at DESC")
+    @listings = Item.where(:user_id => @item.user_id).reject { |attr| attr == @item }
   end
 
   def edit
