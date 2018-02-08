@@ -9,6 +9,7 @@ Feature: Messaging
       And their account is saved 
     Given that they are logged in
     Given they are on the home page
+    Given there are some categories
     When they click list item
       And they fill out the details
       And they upload photos of the item

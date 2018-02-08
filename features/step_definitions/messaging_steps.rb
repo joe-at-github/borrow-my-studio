@@ -1,5 +1,5 @@
 Then("the user signs out") do
-  click_on "Sign out"
+  click_on "Sign Out"
 end
 
 Given("that another user exists") do
