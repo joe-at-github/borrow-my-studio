@@ -1,5 +1,6 @@
 Given("there are some categories") do
-  Category.create!(name: "Synths")
+  @category = Category.create!(name: "Synths")
+  @category_two = Category.create!(name: "Drum Machines")
 end
 
 Given("they are on the home page") do

@@ -1,5 +1,4 @@
 <div id='wrapper'>
-
   <%= form_tag search_items_path, method: :get, class: 'ui search ui icon input', role: 'search' do %>
     <p>
       <%= text_field_tag :search, params[:search], class: "prompt search icon", type: 'text', placeholder: 'I need a...' %> 
@@ -8,12 +7,12 @@
 </div>
 
 <div class='report-wrapper'></div>
-<p class='report-intro'>As recommended by:</p>
-  <div class='the-independant'> 
-  </div>
+  <p class='report-intro'>As recommended by:</p>
+    <div class='the-independant'> 
+    </div>
 
-  <div class='the-times'> 
-  </div>
+    <div class='the-times'> 
+    </div>
   
 </div>
 
