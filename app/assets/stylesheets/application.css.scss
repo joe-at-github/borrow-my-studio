@@ -40,7 +40,6 @@ html {
   margin-left: 1em;
 }
 
-
 #item_image {
   margin-bottom: 1em;
 }
@@ -55,8 +54,14 @@ html {
 }
 
 .item-image img {
-  max-height: auto;
-  width: 100%;
+  width: 325px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.slider {
+  width: 325px;
+  height: 250px;
 }
 
 label {
@@ -93,11 +98,6 @@ label {
 
 #account_avatar_img {
   margin-bottom: 1em;
-}
-
-.slider {
-  width: auto;
-  height: auto;
 }
 
 .item-show {
@@ -190,16 +190,15 @@ h3, h4 {
 }
 
 .thumbnail {
-  height: 150px;
+  height: 170px;
   width: 250px;
   margin-bottom: 10px;
   position: relative;
+  overflow: hidden;
 }
 
-.object-fit-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /*magic*/
+.thumbnail-image {
+  max-width:100%;
 }
 
 .hover-text {
