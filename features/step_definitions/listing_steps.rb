@@ -16,6 +16,7 @@ When("they fill out the details") do
   fill_in "Daily price", with: 100.00
   fill_in "Weekly price", with: 500.00
   select "Synths", :from => "item_category_id"
+  fill_in "Description", with: 'for hire'
 end
 
 When("they upload photos of the item") do
@@ -27,6 +28,7 @@ When("they click the create item button") do
 end
 
 Then("they are taken to the item page") do
+  # save_and_open_page
   expect(page).to have_content("Prophet 6")
 end
 
