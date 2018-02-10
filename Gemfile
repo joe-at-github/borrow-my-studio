@@ -39,6 +39,8 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 gem 'searchkick', '~> 2.4'
 gem 'will_paginate_semantic_ui', '~> 1.0'
+gem 'client_side_validations', '~> 11.1'
+gem 'client_side_validations-simple_form', '~> 6.5', '>= 6.5.1'
 
 
 

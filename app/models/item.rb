@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  validates :item_name, :description, :daily_price, :weekly_price, :images, :category_id,  presence: true
+
   searchkick word_start: [:item_name]
   
   belongs_to :user

@@ -2,7 +2,7 @@
 <div id='account-form'>
   <div class="ui form">
 
-    <%= simple_form_for @account, :url => user_account_path do |f| %>
+    <%= simple_form_for @account, :url => user_account_path, validate: true do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
       <%= f.input :telephone %>

@@ -1,7 +1,7 @@
 
 <div id='item-form'>
   <div class="ui form">
-    <%= simple_form_for @item do |f| %>
+    <%= simple_form_for @item, validate: true do |f| %>
       <%= f.input :item_name %>
       <%= f.input :daily_price %>
       <%= f.input :weekly_price %>

@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def new
     @item = Item.new
   end
@@ -40,7 +39,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-
   def update
     if @item.update(item_params)
       redirect_to item_path(@item)
@@ -49,8 +47,6 @@ class ItemsController < ApplicationController
       render 'edit'
     end
   end
-
-
 
 
   private

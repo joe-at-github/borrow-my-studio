@@ -20,6 +20,7 @@
 //= require rails-ujs
 //= require chosen-jquery
 //= require messages
+//= require rails.validations
 //= require items
 //= require_tree .
 
