@@ -40,7 +40,17 @@
           <%= link_to 'Browse', items_path, class: "item", style:'font-size: 14px' %>
           <%= link_to 'List Item', new_item_path, class: "item", style:'font-size: 14px' %>
           <%= link_to 'Your Conversations', conversations_path, class: "item", style:'font-size: 14px' %>
-          <%= link_to 'Account', user_account_path(current_user), class: "item", style:'font-size: 14px' %>
+        
+        <div class="ui right dropdown item item", style='opacity: 0.8; font-size: 14px;'>  
+          Account
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item"> <%= link_to 'Profile', user_account_path(current_user), style:'font-size: 14px' %></div>
+
+            <div class="item"> <%= link_to 'My Listings', user_account_path(current_user), style:'font-size: 14px' %></div>
+          </div>
+        </div>
+
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "item", style:'font-size: 14px' %>
 
         <% else %>
@@ -49,7 +59,7 @@
           <%= link_to 'Sign In', new_user_session_path, class: "item", style:'font-size: 14px' %> 
           
         <% end %>
-        
+
       </div> 
     </div>
   </div>
@@ -71,6 +81,14 @@
 
 
     <%= yield %>
+
+    <script>
+        $('.ui.dropdown')
+        .dropdown();
+      </script>
+
+
+
 
   
   </body>
