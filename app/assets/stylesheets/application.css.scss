@@ -152,7 +152,7 @@ h3, h4 {
 }
 
 #nav {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   background-color: white;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -260,5 +260,16 @@ h3, h4 {
   margin-right: 10em;
 }
 
+.ui.mini.red.message {
+  margin-bottom: 3em !important;
+}
 
+.item {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+.go-behind {
+  position: relative !important;
+}
 
