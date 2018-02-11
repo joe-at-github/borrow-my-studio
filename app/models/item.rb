@@ -1,7 +1,14 @@
 class Item < ApplicationRecord
   validates :item_name, :description, :daily_price, :weekly_price, :images, :category_id,  presence: true
 
-  searchkick word_start: [:item_name]
+  searchkick word_start: [:item_name, :category_name]
+
+  def search_data
+    {
+      item_name: item_name,
+      category_name: category.name
+    }
+  end
   
   belongs_to :user
   belongs_to :category
@@ -15,3 +22,5 @@ class Item < ApplicationRecord
 
 # end
 end
+
+

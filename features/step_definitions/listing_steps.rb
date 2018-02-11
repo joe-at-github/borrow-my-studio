@@ -61,3 +61,19 @@ end
 Then("they see a flash notice that confirms that they have edited the item") do
   expect(page).to have_content("Item has been updated.")
 end
+
+Given("they click on account") do
+  click_on "Account"
+end
+
+When("they click on listings") do
+  click_on "My Listings"
+end
+
+Then("they should see all their current listings") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("they can edit a listing") do
+  pending # Write code here that turns the phrase above into concrete actions
+end

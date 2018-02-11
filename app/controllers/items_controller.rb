@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def search
     if params[:search].present?
-      @items = Item.search params[:search], fields: [:item_name], match: :word_start 
+      @items = Item.search params[:search], fields: [:item_name, :category_name], match: :word_start 
     end
   end
 

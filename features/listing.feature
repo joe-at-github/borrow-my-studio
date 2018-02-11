@@ -25,3 +25,9 @@ Feature: Listing
     Then the item will be updated
       And they see a flash notice that confirms that they have edited the item    
 
+
+  Scenario: A user can view their listings in the account section
+    Given they click on account
+    When they click on listings
+    Then they should see all their current listings
+      And they can edit a listing
