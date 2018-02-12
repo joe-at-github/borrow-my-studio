@@ -27,7 +27,6 @@ Feature: Listing
 
 
   Scenario: A user can view their listings in the account section
-    Given they click on account
     When they click on listings
     Then they should see all their current listings
       And they can edit a listing

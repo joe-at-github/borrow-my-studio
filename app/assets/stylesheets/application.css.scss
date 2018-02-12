@@ -18,7 +18,7 @@
  @import "semantic-ui";
  @import "semantic-ui/collections/menu";
  @import "semantic-ui/modules/tab";
- @import 'bootstrap';
+ // @import 'bootstrap';
 // @import 'bootstrap/theme';
  @import 'chosen';
 
@@ -124,13 +124,13 @@ h3, h4 {
   margin-top: 18em;
 }
 
-.alert-notice {
-  @extend .alert-success;
-}
+// .alert-notice {
+//   @extend .alert-success;
+// }
 
-.alert-alert {
-  @extend .alert-warning;
-}
+// .alert-alert {
+//   @extend .alert-warning;
+// }
 
 .messages {
   max-height: 400px;
@@ -193,6 +193,8 @@ h3, h4 {
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
+  // border-radius: 1px;
+  border: solid 1px #CCCCCC
 }
 
 .thumbnail-image {
@@ -273,3 +275,42 @@ h3, h4 {
   position: relative !important;
 }
 
+.listings-thumbnail {
+  height: 170px;
+  width: 250px;
+  display:inline-block;
+  
+}
+
+.listings-thumbnail-image {
+  max-width:100%;
+  float: right;
+}
+
+.listings-wrapper {
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+// .inline-p {
+//   width: 150px; 
+// }
+
+.listings-info {
+  display: inline-block;
+  width:50%;
+  margin-left: 5em;
+}
+
+.four.wide.column {
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
+
+.ui.center.aligned.basic.segment {
+  text-align: left;
+}
+
+.ui.menu:not(.vertical) .item {
+  display: inline-block;
+}

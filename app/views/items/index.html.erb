@@ -2,20 +2,22 @@
 <%= render 'categories' %>
 
 <div class='search-container go-behind'>
-  <div class='row'>
+  <div class='ui grid'>
     <% @items.each do |item| %>
-      <div class='col-md-3'>
+      <div class='four wide column'>
         <div class='thumbnail'>
           <%= link_to(image_tag(item.images[0], class: "object-fit-cover"), item_path(:id => item.id)) %>
           <span class='hover-text'> £<%= item.daily_price %>/day </span>
         </div>
-        <h6> <strong> <%= item.item_name %> </strong> </h6> 
-        <h6> from: <%= item.user.username %> ( <%= item.user.account.location %> )</h6>
+        <p> <strong> <%= item.item_name %> </strong> </p> 
+        <p> from: <%= item.user.username %> ( <%= item.user.account.location %> )</p>
       </div>
     <% end %>
   </div>
       
   <%= will_paginate @items %>
+
+
 
 
 </div>

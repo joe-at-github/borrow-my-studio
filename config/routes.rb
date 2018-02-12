@@ -8,6 +8,7 @@ devise_for :users, controllers: {
 
 resources :users do
   resource :account, only: [:show, :new, :create, :edit, :update]
+  resource :listings, only: [:show]
 
 end
 
@@ -29,6 +30,7 @@ resources :items do
     get 'search'
   end
 end
+
 
 
 root 'home#index'
