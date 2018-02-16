@@ -18,7 +18,6 @@ gem 'carrierwave', '~> 1.0'
 gem 'simple_form', '~> 3.5'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
-gem 'omniauth-facebook', '~> 4.0'
 gem 'therubyracer', platforms: :ruby # or any other runtime
 gem 'less-rails'
 gem 'autoprefixer-rails'
