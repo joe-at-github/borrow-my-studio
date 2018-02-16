@@ -128,9 +128,9 @@ h3, h4 {
   margin-bottom: 2em;
 }
 
-#wrapper {
+#home-search-wrapper {
   text-align: center;
-  margin-top: 18em;
+  margin-top: 8em;
 }
 
 .alert-notice {
@@ -229,36 +229,40 @@ h3, h4 {
   width: 79%;
 }
 
-.the-independant {
-  width: 300px;
-  height: 200px;
-  float: left;
-  top: 1rem;
-  background-image: url(indy.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 3em;
-  opacity: 0.12;
-  margin-left: 24em;
-}
+// .the-independant {
+//   width: 300px;
+//   height: 200px;
+//   float: left;
+//   top: 1rem;
+//   background-image: url(indy.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   margin-top: 3em;
+//   opacity: 0.12;
+//   margin-left: 24em;
+// }
 
-.the-times {
-  width: 300px;
-  height: 150px;
-  float: left;
-  top: 1rem;
-  background-image: url(times.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 1em;
-  opacity: 0.12;
-}
+// .the-times {
+//   width: 300px;
+//   height: 150px;
+//   float: left;
+//   top: 1rem;
+//   background-image: url(times.png);
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   margin-top: 1em;
+//   opacity: 0.12;
+// }
 
 .report-intro {
-  width: 100%;
-  text-align: center;
-  margin-top: 9em;
+  margin-left: 7em;
+  margin-right: 7em;
   opacity: 0.3;
+}
+
+.headline-wrapper {
+  text-align: center;
+  padding-top: 5em;
 }
 
 .other-listings-wrapper {
@@ -295,7 +299,6 @@ h3, h4 {
   margin-left: 20em;
   margin-right: 20em;
 }
-
 
 .ui.raised.segment {
   position: relative;
@@ -336,5 +339,10 @@ h3, h4 {
 
 .ui.google.plus.button {
   margin-top: 0.4em !important;
+}
+
+#sign-up-wrapper {
+  display: inline-block;
+  padding-left: 6em;
 }
 

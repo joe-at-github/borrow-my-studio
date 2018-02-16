@@ -4,7 +4,7 @@
 
     <%= simple_form_for @account, :url => user_account_path, validate: true do |f| %>
       <%= f.input :name %>
-      <%= f.input :location %>
+      <%= f.input :location, label: 'Location postcode' %>
       <%= f.input :telephone %>
       <%= f.label :your_bio, label: 'Your bio' %>
       <%= f.text_area :your_bio %>
