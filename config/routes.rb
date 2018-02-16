@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', 
+    :omniauth_callbacks => "users/omniauth_callbacks" }
 
 resources :users do
   resource :account, only: [:show, :new, :create, :edit, :update]

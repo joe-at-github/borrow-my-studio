@@ -20,7 +20,7 @@ When("they upload an avatar photo") do
 end
 
 Then("they submit the account form") do
-  click_on "Create Account"
+  click_on "Create Profile"
 end
 
 Then("their account is saved") do
@@ -45,7 +45,7 @@ Given("they have edited the content") do
 end
 
 When("they submit the update account form") do
-  click_on "Update Account"
+  click_on "Update Profile"
 end
 
 Then("the account is updated") do

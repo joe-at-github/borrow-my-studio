@@ -18,8 +18,11 @@
  @import "semantic-ui";
  @import "semantic-ui/collections/menu";
  @import "semantic-ui/modules/tab";
- // @import 'bootstrap';
-// @import 'bootstrap/theme';
+ @import 'bootstrap';
+ @import 'bootstrap/theme';
+ @import "bootstrap";
+ @import "bootstrap-social";
+ @import "font-awesome";
  @import 'chosen';
 
 body {
@@ -71,10 +74,12 @@ label {
   font-size: 0.92857143em;
   font-weight: bold;
   text-transform: none;
+  margin-top: 1em;
 }
 
 .edit-account-form {
   width: 48.5%;
+  margin-left: 1em;
 }
 
 .new-account-form {
@@ -83,19 +88,24 @@ label {
 }
 
 #account-image img {
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   object-fit: contain;
   margin-bottom: 2em;
-}
-
-#account_your_bio {
-  margin-bottom: 1em;
-  height: 8em;
+  margin-left: 1.5em;
 }
 
 #account_avatar_img {
   margin-bottom: 1em;
+}
+
+#account_your_bio {
+  // margin-bottom: 1em;
+  height: 8em;
+}
+
+#new-account-header {
+  margin-bottom: 2em;
 }
 
 .item-show {
@@ -124,13 +134,13 @@ h3, h4 {
   margin-top: 18em;
 }
 
-// .alert-notice {
-//   @extend .alert-success;
-// }
+.alert-notice {
+  @extend .alert-success;
+}
 
-// .alert-alert {
-//   @extend .alert-warning;
-// }
+.alert-alert {
+  @extend .alert-warning;
+}
 
 .messages {
   max-height: 400px;
@@ -154,8 +164,8 @@ h3, h4 {
 #nav {
   margin-bottom: 2em;
   background-color: white;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  // padding-top: 0.5em;
+  // padding-bottom: 0.5em;
 }
 
 .form-inputs {
@@ -170,7 +180,6 @@ h3, h4 {
   text-align: right;
   float: right;
 }
-
 
 #description {
   width: 300px;
@@ -193,7 +202,6 @@ h3, h4 {
   margin-bottom: 10px;
   position: relative;
   overflow: hidden;
-  // border-radius: 1px;
   border: solid 1px #CCCCCC
 }
 
@@ -278,8 +286,7 @@ h3, h4 {
 .listings-thumbnail {
   height: 170px;
   width: 250px;
-  display:inline-block;
-  
+  display:inline-block; 
 }
 
 .listings-thumbnail-image {
@@ -288,18 +295,22 @@ h3, h4 {
 }
 
 .listings-wrapper {
-  margin-left: 15em;
-  margin-right: 15em;
+  margin-left: 20em;
+  margin-right: 20em;
 }
 
-// .inline-p {
-//   width: 150px; 
-// }
+
+.ui.raised.segment {
+  position: relative;
+  margin-bottom: 1em !important;
+}
 
 .listings-info {
   display: inline-block;
-  width:50%;
-  margin-left: 5em;
+  width: 40%;
+  margin-left: 8em;
+  position: absolute;
+  top: 5em;
 }
 
 .four.wide.column {
@@ -314,3 +325,19 @@ h3, h4 {
 .ui.menu:not(.vertical) .item {
   display: inline-block;
 }
+
+#listing-buttons {
+  display: inline-block;
+  position: absolute;
+  top: 5em;
+  margin-left: 24em;
+}
+
+#listings-container {
+  margin-top: 4em;
+}
+
+.ui.google.plus.button {
+  margin-top: 0.4em !important;
+}
+

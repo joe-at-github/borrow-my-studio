@@ -9,7 +9,13 @@ class Item < ApplicationRecord
       category_name: category.name
     }
   end
-  
+
+  def number_of_days
+    start_date = Time.now
+    end_date = self.created_at
+    (start_date.to_date - end_date.to_date).to_i
+  end
+
   belongs_to :user
   belongs_to :category
   mount_uploaders :images, ImageUploader

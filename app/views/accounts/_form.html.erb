@@ -8,9 +8,10 @@
       <%= f.input :telephone %>
       <%= f.label :your_bio, label: 'Your bio' %>
       <%= f.text_area :your_bio %>
+      <%= f.label :avatar_img, label: 'Your profile pic' %>
       <%= f.file_field :avatar_img %>
 
-      <%= f.button :submit, class: "teal ui primary button" %>
+      <%= f.button :submit, 'Create Profile', class: "ui teal button" %>
     <% end %>
   
   </div>

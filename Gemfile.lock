@@ -48,6 +48,11 @@ GEM
     backports (3.11.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    bootstrap-social-rails (4.12.0)
+      railties (>= 3.1)
     builder (3.2.3)
     bxslider-rails (4.2.5.1)
     byebug (9.1.0)
@@ -171,7 +176,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
-    libv8 (3.16.14.19-x86_64-darwin-16)
+    libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -210,6 +215,10 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (4.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.5.3)
+      jwt (>= 1.5)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.5)
     omniauth-oauth2 (1.5.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
@@ -337,6 +346,8 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bootstrap-sass (~> 3.3, >= 3.3.7)
+  bootstrap-social-rails
   bxslider-rails (~> 4.2, >= 4.2.5.1)
   byebug
   capybara (~> 2.13)
@@ -362,6 +373,7 @@ DEPENDENCIES
   mailboxer (~> 0.15.1)
   mini_magick (~> 4.8)
   omniauth-facebook (~> 4.0)
+  omniauth-google-oauth2 (~> 0.5.3)
   pg (~> 0.18)
   poltergeist
   pry

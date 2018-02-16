@@ -8,10 +8,17 @@
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+    </script>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="111417963310-7748mij1m93qh50kil81lqc677p0lsrr.apps.googleusercontent.com">
+
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+
 
     <style>
       #map-canvas {
@@ -24,15 +31,13 @@
   <body>
 
   <div id='nav'>
-    <div class="ui secondary pointing menu">
-      <%= link_to 'Borrow-My-Studio', root_path, class: "item", style:'font-size: 16px' %>
+    <div class="ui tabular   menu">
+      <%= link_to 'Borrow-My-Studio', root_path, class: "item", style:'font-size: 14px' %>
         <div class="item", style='font-size: 14px'>
-          <%= form_tag search_items_path, method: :get, class: 'ui search ui icon input', role: 'search' do %><p>
-            <%= text_field_tag :search, params[:search], class: "search icon", type: 'text', placeholder: 'Search...' %></p>
+          <%= form_tag search_items_path, method: :get, class: 'ui search input', role: 'search' do %>
+          <p><%= text_field_tag :search, params[:search], type: 'text', placeholder: 'Search...' %></p> 
           <% end %>
         </div>
-
-    
       
       
       <div class="right menu">
@@ -43,7 +48,7 @@
           <%= link_to 'List Item', new_item_path, class: "item", style:'font-size: 14px' %>
           <%= link_to 'Your Conversations', conversations_path, class: "item", style:'font-size: 14px' %>
         
-        <div class="ui right dropdown item item", style='opacity: 0.8; font-size: 14px;'>  
+        <div class="ui right dropdown item item", style='opacity: 0.8; font-size: 14px; padding-bottom: 1em;'>  
           Account
           <i class="dropdown icon"></i>
           <div class="menu">
@@ -56,6 +61,13 @@
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "item", style:'font-size: 14px' %>
 
         <% else %>
+
+          <a href="users/auth/google_oauth2">
+            <div class="ui google plus button">
+              <i class="google plus icon"></i>
+              Login with Google
+            </div>
+          </a>
 
           <%= link_to 'Sign Up', new_user_registration_path, class: "item", style:'font-size: 14px' %> 
           <%= link_to 'Sign In', new_user_session_path, class: "item", style:'font-size: 14px' %> 

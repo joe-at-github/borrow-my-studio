@@ -19,14 +19,13 @@ Feature: Listing
       And they are taken to the item page
       And they see a flash notice that confirms that they have listed an item
     Then the item is saved to the database     
-    When they click on edit listing
-      And they edit the listing
-      And they click on update item
-    Then the item will be updated
-      And they see a flash notice that confirms that they have edited the item    
-
+      
 
   Scenario: A user can view their listings in the account section
-    When they click on listings
-    Then they should see all their current listings
-      And they can edit a listing
+    Given they click on listings
+      And they should see their current listings
+      And they click on edit listing
+    When they edit the listing
+      And they click on update item
+    Then the item will be updated
+      And they see a flash notice that confirms that they have edited the item 

@@ -19,12 +19,12 @@ gem 'simple_form', '~> 3.5'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
 gem 'omniauth-facebook', '~> 4.0'
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'therubyracer', platforms: :ruby # or any other runtime
 gem 'less-rails'
 gem 'autoprefixer-rails'
 gem 'semantic-ui-rails'
 gem 'semantic-ui-sass'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
 gem 'mailboxer', '~> 0.15.1'
 gem 'will_paginate', '~> 3.0'
@@ -38,7 +38,9 @@ gem 'searchkick', '~> 2.4'
 gem 'will_paginate_semantic_ui', '~> 1.0'
 gem 'client_side_validations', '~> 11.1'
 gem 'client_side_validations-simple_form', '~> 6.5', '>= 6.5.1'
-
+gem 'omniauth-google-oauth2', '~> 0.5.3'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 
 group :test do

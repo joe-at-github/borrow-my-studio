@@ -24,11 +24,10 @@ When("they upload photos of the item") do
 end
 
 When("they click the create item button") do
-  click_button "Create Item"
+  click_button "List Item"
 end
 
 Then("they are taken to the item page") do
-  # save_and_open_page
   expect(page).to have_content("Prophet 6")
 end
 
@@ -41,6 +40,14 @@ Then("the item is saved to the database") do
   expect(Item.last.daily_price).to eq 100.00
 end
 
+Given("they click on listings") do
+  # find('.ui.right.dropdown.item').click
+  click_on 'My Listings'
+end
+
+Then("they should see their current listings") do
+  expect(page).to have_content("Prophet 6")
+end
 
 When("they click on edit listing") do
   click_on "Edit Listing"
@@ -62,16 +69,3 @@ Then("they see a flash notice that confirms that they have edited the item") do
   expect(page).to have_content("Item has been updated.")
 end
 
-When("they click on listings") do
-  # save_and_open_page
-  find('.ui.right.dropdown.item').click
-  click_on 'My Listings'
-end
-
-Then("they should see all their current listings") do
-  expect(page).to have_content("Prophet 6")
-end
-
-Then("they can edit a listing") do
-  pending # Write code here that turns the phrase above into concrete actions
-end

@@ -1,18 +1,26 @@
+<div id='listings-container'></div>
+  <% @listings.each do |listing| %>
+    <div class='listings-wrapper'>
+      <div class="ui raised segment">
 
-<% @listings.each do |listing| %>
-  <div class='listings-wrapper'>
-    <div class="ui raised segment">
-
-      <div class='listings-thumbnail'>
-        <%= link_to(image_tag(listing.images[0], class: 'listings-thumbnail-image'), item_path(:id => listing.id)) %>
-      </div>
-        <div class='listings-info'>
-          <p class='inline-p'> <%= listing.item_name %> </p>
-          <p class='inline-p'> <%= listing.daily_price %> </p>
-          <p class='inline-p'> <%= listing.created_at %> </p>
+        <div class='listings-thumbnail'>
+          <%= link_to(image_tag(listing.images[0], class: 'listings-thumbnail-image'), item_path(:id => listing.id)) %>
         </div>
+          <div class='listings-info'>
+            <p> <strong> <%= listing.item_name %> </strong> </p>
+            <p> £<%= listing.daily_price %>/day </p>
+            <p> Posted <% listing.number_of_days %> <%= pluralize(listing.number_of_days, 'day') %> ago </p>
+          </div>
+          
+          <div id='listing-buttons'>
+            <%= button_to 'Edit Listing', edit_item_path(listing.id), :method => :get, class: "ui teal button" %>
+            <%= button_to 'Remove Listing', item_path(listing.id), :method => :delete, data: { confirm: "Are you sure?" }, class: "ui primary button", style:'margin-top:1em' %>
+          </div>
 
+      </div>
     </div>
-  </div>
 
-<% end %>
+  <% end %>
+</div>
+
+

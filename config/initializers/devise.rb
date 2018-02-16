@@ -279,5 +279,8 @@ Devise.setup do |config|
 
   config.allow_unconfirmed_access_for = 1.minute
 
+  config.omniauth :google_oauth2, "111417963310-7748mij1m93qh50kil81lqc677p0lsrr.apps.googleusercontent.com", "AtnB2zbXnqxbbMRqxABCTmuD", { }
+
+
 
 end

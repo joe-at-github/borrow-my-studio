@@ -48,6 +48,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item.destroy
+    redirect_to user_listings_path(current_user)
+    flash[:notice] = "Item was removed from your listings."
+  end
+
+
 
   private
   def item_params
