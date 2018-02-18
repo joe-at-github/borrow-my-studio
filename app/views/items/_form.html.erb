@@ -1,18 +1,20 @@
 
 <div id='item-form'>
   <div class="ui form">
+
     <%= simple_form_for @item, validate: true do |f| %>
       <%= f.input :item_name %>
       <%= f.input :daily_price %>
       <%= f.input :weekly_price %>
       <%= f.label :category_id, label: 'Category' %>
-      <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select one' %>
+      <%= f.collection_select :category_id, Category.all.order('name'), :id, :name, :prompt => 'Select one' %>
       <%= f.label :images, label: 'Images' %>
       <%= f.file_field :images, multiple: true %> 
       <%= f.label :description, label: 'Description' %>
       <%= f.text_area :description %>
-
+    <div class ='button'>
       <%= f.button :submit, 'List Item', class: "teal ui button" %>
+    </div>
     <% end %>
   </div>
 </div>

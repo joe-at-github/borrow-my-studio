@@ -1,18 +1,21 @@
+  <div class='new-account-form'>
+    <h4 class='form-banner'> Complete your profile </h4>
+    
+    <%= simple_form_for(@account, url: user_account_path, html: {class: 'form-horizontal'}, validate: true) do |f| %>
+      <%= f.input :name, input_html: { class: 'form-control' }, label: false, placeholder: "first name" %>
+      <%= f.input :location, input_html: { class: 'form-control' }, label: false, placeholder: 'postcode/zipcode' %>
+      <%= f.input :telephone, input_html: { class: 'form-control' }, label: false, placeholder: "telephone" %>
+      <%= f.input :your_bio, as: :text, input_html: { class: 'form-control' }, label: false, placeholder: "tell us a bit about yourself..." %>
+      
+      <label for="file-upload" class="custom-file-upload">
+        <i class="fa fa-cloud-upload"></i> Pic Upload
+      </label>
+      <%= f.file_field :avatar_img, id: 'file-upload', input_html: { class: 'form-control' } %>
 
-<div id='account-form'>
-  <div class="ui form">
+      <div class='button'>
+        <%= f.button :submit, 'Create Profile', class: "ui teal button" %>
+      </div>
 
-    <%= simple_form_for @account, :url => user_account_path, validate: true do |f| %>
-      <%= f.input :name %>
-      <%= f.input :location, label: 'Location postcode' %>
-      <%= f.input :telephone %>
-      <%= f.label :your_bio, label: 'Your bio' %>
-      <%= f.text_area :your_bio %>
-      <%= f.label :avatar_img, label: 'Your profile pic' %>
-      <%= f.file_field :avatar_img %>
-
-      <%= f.button :submit, 'Create Profile', class: "ui teal button" %>
     <% end %>
-  
   </div>
-</div>
+  

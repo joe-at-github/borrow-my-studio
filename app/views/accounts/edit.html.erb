@@ -1,13 +1,10 @@
   <div class='edit-account-form'>
 
-    <div>
-        <div id='account-image'>
-          <%= image_tag @account.avatar_img, :class => "ui medium rounded image" %> 
-        </div>
+    <div id='account-image'>
+      <%= image_tag @account.avatar_img, :class => "ui medium rounded image" %> 
     </div>
+    
 
-
-    <div class='edit-account-form'>
       <%= simple_form_for([@user, @account]) do |f| %>
       <%= f.input :name %>
       <%= f.input :location %>
@@ -16,10 +13,11 @@
       <%= f.file_field :avatar_img %>
       <%= f.label :your_bio, label: 'Your bio' %>
       <%= f.text_area :your_bio %>
-
-      <%= f.button :submit, 'Update Profile', class: "teal ui primary button" %>
+      <div class='button'>
+        <%= f.button :submit, 'Update Profile', class: "teal ui button" %>
+      </div>
+    
       <% end %>
-    </div>
 
   </div>
 

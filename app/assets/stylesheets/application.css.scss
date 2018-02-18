@@ -25,6 +25,14 @@
  @import "font-awesome";
  @import 'chosen';
 
+ @mixin background-tile {
+  box-sizing: border-box;
+  background-color: #F9F9F9;
+  border-radius: 2px;
+  box-shadow: 2px 2px 3px 3px #ccc;
+  padding: 0.5em 0.5em;
+}
+
 body {
   font-family: 'Lato';  
   width: 100%;
@@ -39,8 +47,9 @@ html {
 }
 
 #item-form {
-  width: 30%;
+  width: 40%;
   margin-left: 1em;
+  @include background-tile;
 }
 
 #item_image {
@@ -67,24 +76,26 @@ html {
   height: 250px;
 }
 
+
 label {
-  display: block;
-  margin: 0em 0em 0.28571429rem 0em;
-  color: rgba(0, 0, 0, 0.87);
   font-size: 0.92857143em;
-  font-weight: bold;
-  text-transform: none;
-  margin-top: 1em;
+  font-weight: normal;
+  margin-left: 1.1em;
 }
+  
 
 .edit-account-form {
-  width: 48.5%;
+  width: 40%;
   margin-left: 1em;
+  @include background-tile;
 }
 
 .new-account-form {
-  width: 30%;
+  width: 36%;
+  height: 68%;
   margin-left: 1em;
+  margin-top: 2em;
+  @include background-tile;
 }
 
 #account-image img {
@@ -95,17 +106,16 @@ label {
   margin-left: 1.5em;
 }
 
-#account_avatar_img {
-  margin-bottom: 1em;
-}
+// #account_avatar_img {
+//   margin-bottom: 1em;
+//   // width: 238px;
+// }
 
 #account_your_bio {
-  height: 8em;
+  height: 6em;
+  width: 100%;
 }
 
-#new-account-header {
-  margin-bottom: 2em;
-}
 
 .item-show {
   margin-left: 1em;
@@ -148,9 +158,9 @@ h3, h4 {
   margin-top: 1em;
 }
 
-.form-group {
-  width: 40%
-}
+// .form-group {
+//   width: 40%
+// }
 
 #mailbox-buttons {
   float: left;
@@ -165,9 +175,9 @@ h3, h4 {
   background-color: white;
 }
 
-.form-inputs {
-  width: 40%;
-}
+// .form-inputs {
+//   width: 40%;
+// }
 
 .form-actions {
   margin-top: 1em;
@@ -229,30 +239,6 @@ h3, h4 {
   width: 79%;
 }
 
-// .the-independant {
-//   width: 300px;
-//   height: 200px;
-//   float: left;
-//   top: 1rem;
-//   background-image: url(indy.png);
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   margin-top: 3em;
-//   opacity: 0.12;
-//   margin-left: 24em;
-// }
-
-// .the-times {
-//   width: 300px;
-//   height: 150px;
-//   float: left;
-//   top: 1rem;
-//   background-image: url(times.png);
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   margin-top: 1em;
-//   opacity: 0.12;
-// }
 
 .report-intro {
   margin-left: 7em;
@@ -344,5 +330,39 @@ h3, h4 {
 #sign-up-wrapper {
   display: inline-block;
   padding-left: 6em;
+}
+
+.button {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.form-horizontal {
+  // margin-left: 2em;
+}
+
+.form-banner {
+  text-align: center;
+  opacity: 0.4;
+}
+
+.form-group {
+  width: 100%;
+}
+
+input#account_name, input#account_location, input#account_telephone, textarea#account_your_bio {
+  margin-left: 1.1em;
+  margin-top: 1em;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }
 

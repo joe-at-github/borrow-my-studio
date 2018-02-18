@@ -9,9 +9,13 @@
         <%= text_field_tag :search, params[:search], class: "prompt search icon", type: 'text', placeholder: 'I need a...' %> 
       </p>
     <% end %>
-    <div id='sign-up-wrapper'>
-      <%= link_to 'Sign Up', new_user_registration_path, class: "ui teal button" %>
-    </div>
+    
+    <% unless current_user %>
+      <div id='sign-up-wrapper'>
+        <%= link_to 'Sign Up', new_user_registration_path, class: "ui teal button" %>
+      </div>
+    <% end %>
+
   </div>
 
 </div>

@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
   def create
     @account = @user.build_account(account_params)
     if @account.save
-      redirect_to root_path
+      redirect_to user_account_path(current_user)
       flash[:notice] = "Your account information has been saved."
     else
       flash[:error] = "Error."

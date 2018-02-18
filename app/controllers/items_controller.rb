@@ -17,7 +17,12 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    if current_user.account.present?
+      @item = Item.new
+    else
+      flash[:alert] = 'You must complete your profile before you can list an item.'
+      redirect_to new_user_account_path(current_user)
+    end
   end
 
   def create
