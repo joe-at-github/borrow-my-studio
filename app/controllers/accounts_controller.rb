@@ -33,7 +33,7 @@ class AccountsController < ApplicationController
     @account = @user.account
     if @account.update(account_params)
     flash[:notice] = 'Your account information was successfully updated.'
-    redirect_to root_path
+    redirect_to edit_user_account_path(current_user)
     else
       render 'edit'
     end 

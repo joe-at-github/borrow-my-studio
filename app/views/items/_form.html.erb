@@ -1,20 +1,23 @@
-
 <div id='item-form'>
   <div class="ui form">
+    <h4 class='form-banner'> List an item in one simple step... </h4>
 
     <%= simple_form_for @item, validate: true do |f| %>
-      <%= f.input :item_name %>
-      <%= f.input :daily_price %>
-      <%= f.input :weekly_price %>
-      <%= f.label :category_id, label: 'Category' %>
-      <%= f.collection_select :category_id, Category.all.order('name'), :id, :name, :prompt => 'Select one' %>
-      <%= f.label :images, label: 'Images' %>
-      <%= f.file_field :images, multiple: true %> 
-      <%= f.label :description, label: 'Description' %>
-      <%= f.text_area :description %>
-    <div class ='button'>
-      <%= f.button :submit, 'List Item', class: "teal ui button" %>
-    </div>
+      <%= f.input :item_name, input_html: { class: 'form-control' }, label: false, placeholder: "item name" %>
+      <%= f.input :daily_price, input_html: { class: 'form-control' }, label: false, placeholder: "daily price" %>
+      <%= f.input :weekly_price, input_html: { class: 'form-control' }, label: false, placeholder: "weekly price" %>
+      <%= f.collection_select :category_id, Category.all.order('name'), :id, :name, :prompt => 'select a category', input_html: { class: 'form-control' } %>
+      <%= f.text_area :description, input_html: { class: 'form-control' }, label: false, placeholder: "description" %>
+
+      <label for="file-upload" class="custom-file-upload">
+        <i class="fa fa-cloud-upload"></i> Pic Upload x2
+      </label>
+      <%= f.file_field :images, multiple: true, id: 'file-upload', input_html: { class: 'form-control' } %>
+
+      <div class ='button'>
+        <%= f.button :submit, 'List Item', class: "teal ui button" %>
+      </div>
+      
     <% end %>
   </div>
 </div>
