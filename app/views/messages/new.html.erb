@@ -1,26 +1,34 @@
+<div id='new-message-form'>
+  <div class="ui form">
 
-<%= form_tag messages_path, method: :post do %>
-  <div class="form-group">
-    <%= label_tag 'message[subject]', 'Subject' %>
-    <%= text_field_tag 'message[subject]', params[:subject], class: 'form-control', required: true %>
-  </div>
+    <%= form_tag messages_path, method: :post do %>
+      <div class="form-group">
+        <%= label_tag 'message[subject]', 'Subject' %>
+        <%= text_field_tag 'message[subject]', params[:subject], class: 'form-control', required: true %>
+      </div>
 
-  <div class="form-group">
-    <%= label_tag 'message[body]', 'Message' %>
-    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
-  </div>
+      <div class="form-group">
+        <%= label_tag 'message[body]', 'Message' %>
+        <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+      </div>
 
-  <div class="form-group">
-    <%= label_tag 'recipients', 'Choose recipients' %>
-    
-    <% if params[:recipients] %>
-      <%= select_tag 'recipients', recipient, class: 'form-control', required: true %>
-    <% else %>
-      <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
+      <div class="form-group">
+        <%= label_tag 'recipients', 'Choose recipients' %>
+        
+        <% if params[:recipients] %>
+          <%= select_tag 'recipients', recipient, class: 'form-control', required: true %>
+        <% else %>
+          <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control chosen-it' %>
+        <% end %>
+      </div>
+
+      <div class='button'> 
+        <%= submit_tag 'Send', class: "ui primary button" %>
+      </div>
+
     <% end %>
-  </div>
 
-  <%= submit_tag 'Send', class: "ui primary button" %>
-<% end %>
+  </div>
+</div>
 
 
