@@ -40,6 +40,8 @@ gem 'client_side_validations-simple_form', '~> 6.5', '>= 6.5.1'
 gem 'omniauth-google-oauth2', '~> 0.5.3'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem "figaro"
+gem "fog-aws"
 
 
 group :test do
